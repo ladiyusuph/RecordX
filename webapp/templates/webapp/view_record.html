@@ -1,0 +1,53 @@
+{% extends 'webapp/base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="card">
+    <div class="card-body">
+      <br />
+      <strong>
+        &nbsp; &nbsp;
+        {{ record.last_name|upper }}
+        {{ record.first_name }}
+      </strong>
+      <div>
+        {% if record.image %}
+          <img src="{{ record.image.url }}" alt="User Picture" class="profile-picture" />
+        {% endif %}
+      </div>
+
+      <hr />
+      <p>
+        <strong>ID:</strong>{{ record.id }}
+      </p>
+      <p>
+        <strong>Email:</strong>{{ record.email }}
+      </p>
+      <p>
+        <strong>Phone NO:</strong>{{ record.phone_no }}
+      </p>
+      <p>
+        <strong>Role:</strong>{{ record.role }}
+      </p>
+      <p>
+        <strong>Country:</strong>{{ record.country }}
+      </p>
+      <p>
+        <strong>State:</strong>{{ record.state }}
+      </p>
+      <p>
+        <strong>Branch:</strong>{{ record.branch }}
+      </p>
+      <p>
+        <strong>Date Joined:</strong>{{ record.date_created }}
+      </p>
+    </div>
+  </div>
+
+  <br />
+  <a href="{% url 'webapp:dashboard' %}" class="btn btn-secondary">Return &nbsp; <i class="fa fa-arrow-left"></i></a>
+  &nbsp;
+  <a href="{% url 'webapp:update-record' record.pk %}" class="btn btn-info">Update &nbsp; <i class="fa fa-plus"></i></a>
+  &nbsp;
+  <a href="{% url 'webapp:delete-record' record.pk %}" class="btn btn-danger">Delete &nbsp; <i class="fa fa-minus-square"></i></a>
+{% endblock %}

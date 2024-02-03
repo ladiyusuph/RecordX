@@ -1,0 +1,18 @@
+.form_layout{
+
+    border-radius: 15px;
+    width: 500px;
+}
+.profile-picture {
+    width: 100px; /* Set the desired width */
+    height: 100px; /* Set the desired height */
+    border-radius: 50%; /* Make it round */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+  }
+
+.message_text{
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+}
+```
